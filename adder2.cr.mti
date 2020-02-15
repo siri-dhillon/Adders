@@ -1,0 +1,152 @@
+C:/Users/sirpr/OneDrive/Desktop/LW02-back/goodSkipb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/sirpr/OneDrive/Desktop/LW02-back/goodSkipb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity goodSkipb
+-- Compiling architecture imp of goodSkipb
+-- Loading entity and4
+-- Loading entity Cprop
+
+} {} {}} C:/Users/sirpr/OneDrive/Desktop/LW02-back/Cnet.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/sirpr/OneDrive/Desktop/LW02-back/Cnet.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Cnet
+-- Compiling architecture Ripple of Cnet
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading entity Cprop
+-- Compiling architecture BookSkip of Cnet
+-- Loading entity Cnet
+-- Loading entity blockSkip
+-- Compiling architecture GoodSkip of Cnet
+-- Loading entity Cnet
+-- Loading entity goodSkipb
+-- Compiling architecture BrentKung of Cnet
+-- Loading entity Cnet
+
+} {} {}} C:/Users/sirpr/OneDrive/Desktop/LW02-back/BlockSkip.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/sirpr/OneDrive/Desktop/LW02-back/BlockSkip.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity blockSkip
+-- Compiling architecture imp of blockSkip
+-- Loading entity and4
+-- Loading entity Cprop
+
+} {} {}} C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart1.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart1.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity TestPart1
+-- Compiling architecture Behavioural of TestPart1
+-- Loading package NUMERIC_STD
+-- Loading entity ParityCheck
+
+} {} {}} C:/Users/sirpr/OneDrive/Desktop/LW02-back/part1.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/sirpr/OneDrive/Desktop/LW02-back/part1.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ParityCheck
+-- Compiling architecture Tree1 of ParityCheck
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading entity xor2
+-- Compiling architecture Chain1 of ParityCheck
+-- Loading entity ParityCheck
+-- Compiling architecture Chain2 of ParityCheck
+-- Loading entity ParityCheck
+-- Compiling architecture Tree2 of ParityCheck
+-- Loading entity ParityCheck
+
+} {} {}} C:/Users/sirpr/OneDrive/Desktop/LW02-back/LuckyGates.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/sirpr/OneDrive/Desktop/LW02-back/LuckyGates.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity and2
+-- Compiling architecture primitive of and2
+-- Compiling entity and3
+-- Compiling architecture primitive of and3
+-- Compiling entity and4
+-- Compiling architecture primitive of and4
+-- Compiling entity or2
+-- Compiling architecture primitive of or2
+-- Compiling entity or3
+-- Compiling architecture primitive of or3
+-- Compiling entity or4
+-- Compiling architecture primitive of or4
+-- Compiling entity xor2
+-- Compiling architecture primitive of xor2
+-- Compiling entity inverter
+-- Compiling architecture primitive of inverter
+-- Compiling entity Cprop
+-- Compiling architecture Structural of Cprop
+-- Loading entity and2
+-- Loading entity or2
+
+} {} {}} C:/Users/sirpr/OneDrive/Desktop/LW02-back/cprop.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/sirpr/OneDrive/Desktop/LW02-back/cprop.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Cprop
+-- Compiling architecture Element of Cprop
+-- Loading entity and2
+-- Loading entity or2
+
+} {} {}} C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart2.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity TestPart2
+-- Compiling architecture Behavioural of TestPart2
+-- Loading entity adder
+
+} {} {}} C:/Users/sirpr/OneDrive/Desktop/LW02-back/part2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/sirpr/OneDrive/Desktop/LW02-back/part2.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity GPnet
+-- Compiling architecture Structural of GPnet
+-- Loading entity and2
+-- Loading entity xor2
+-- Compiling entity Snet
+-- Compiling architecture Structural of Snet
+-- Compiling entity adder
+-- Compiling architecture Ripple of adder
+-- Loading entity GPnet
+-- Loading package NUMERIC_STD
+-- Loading entity Cnet
+-- Loading entity Snet
+-- Compiling architecture BookSkip of adder
+-- Loading entity adder
+-- Compiling architecture GoodSkip of adder
+-- Loading entity adder
+-- Compiling architecture BrentKung of adder
+-- Loading entity adder
+
+} {} {}}

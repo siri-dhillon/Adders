@@ -1,0 +1,1097 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+Eadder
+Z0 w1581128174
+Z1 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z5 dC:/Users/sirpr/OneDrive/Desktop/LW02-back
+Z6 8C:/Users/sirpr/OneDrive/Desktop/LW02-back/part2.vhd
+Z7 FC:/Users/sirpr/OneDrive/Desktop/LW02-back/part2.vhd
+l0
+L74
+Vf>02d@?Yf;QI=aT7=QM;70
+!s100 UY]bigX]M8_VYOP96Y:Gc1
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1581803028
+!i10b 1
+Z10 !s108 1581803028.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sirpr/OneDrive/Desktop/LW02-back/part2.vhd|
+Z12 !s107 C:/Users/sirpr/OneDrive/Desktop/LW02-back/part2.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Abrentkung
+Z15 DEx4 work 4 snet 0 22 @bebNligX3=fOCAVSdj0B0
+Z16 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z17 DEx4 work 4 cnet 0 22 oEB05ioT3:@7naGBa<KJO0
+Z18 DEx4 work 5 gpnet 0 22 I7a@M?AXkMJC4e0RES<TU1
+R1
+R2
+R3
+R4
+Z19 DEx4 work 5 adder 0 22 f>02d@?Yf;QI=aT7=QM;70
+l146
+L143
+V@;i294773Ie3IeULl10=`0
+!s100 ;EVY]^JLWmOlUmM?oz@6Y3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Agoodskip
+R15
+R16
+R17
+R18
+R1
+R2
+R3
+R4
+R19
+l130
+L127
+VE>Tcg5?M1@BZn`nUHH]Z=1
+!s100 CNKSVa7L[CWbTkG7GNnlX0
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Abookskip
+R15
+R16
+R17
+R18
+R1
+R2
+R3
+R4
+R19
+l111
+L108
+VeC[z2d>^8Ehbe1OO<9d7f2
+!s100 cLAk]<[:FkFYYTc7QD5b73
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Aripple
+R15
+R16
+R17
+R18
+R1
+R2
+R3
+R4
+R19
+l93
+L90
+V_MG[d2l4<kIU<Z0]^M[g02
+!s100 mY:_QjH0T3zR=d]`OB4eG2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Eand2
+Z20 w1581128166
+R1
+R2
+R3
+R4
+R5
+Z21 8C:/Users/sirpr/OneDrive/Desktop/LW02-back/LuckyGates.vhd
+Z22 FC:/Users/sirpr/OneDrive/Desktop/LW02-back/LuckyGates.vhd
+l0
+L9
+V_VA7oH?XTfY4^4[N<LUI92
+!s100 K1]P@jfCM;a<b<QPRkOE22
+R8
+32
+Z23 !s110 1581803027
+!i10b 1
+Z24 !s108 1581803027.000000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sirpr/OneDrive/Desktop/LW02-back/LuckyGates.vhd|
+Z26 !s107 C:/Users/sirpr/OneDrive/Desktop/LW02-back/LuckyGates.vhd|
+!i113 1
+R13
+R14
+Aprimitive
+R1
+R2
+R3
+R4
+Z27 DEx4 work 4 and2 0 22 _VA7oH?XTfY4^4[N<LUI92
+l16
+L15
+V21?G]_K;ZcAElU;d@_2bh0
+!s100 79H6fgl7Rz]YoF@8V<?[>2
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Eand3
+R20
+R1
+R2
+R3
+R4
+R5
+R21
+R22
+l0
+L25
+Vf7DzcioYYVYW;M2o_nZMF3
+!s100 =goTn=Q6czO=bZ^n=lBQi0
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Aprimitive
+R1
+R2
+R3
+R4
+DEx4 work 4 and3 0 22 f7DzcioYYVYW;M2o_nZMF3
+l32
+L31
+VNkD<?kYoB1kmKYcG:ZGo:1
+!s100 @49lC5AFLPUKcEYH[fnmL3
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Eand4
+R20
+R1
+R2
+R3
+R4
+R5
+R21
+R22
+l0
+L46
+V_N8?8gdX5Qh9OlW3oAEz<0
+!s100 9NCJ9D?6WC`>od6hRAHYY0
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Aprimitive
+R1
+R2
+R3
+R4
+Z28 DEx4 work 4 and4 0 22 _N8?8gdX5Qh9OlW3oAEz<0
+l54
+L53
+V2mQYgBz5D7<n@1oe8OZRb2
+!s100 eTPDmG6]a6e8GM_^AzGV=1
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Eblockskip
+Z29 w1581723256
+R1
+R2
+R3
+R4
+R5
+Z30 8C:/Users/sirpr/OneDrive/Desktop/LW02-back/BlockSkip.vhd
+Z31 FC:/Users/sirpr/OneDrive/Desktop/LW02-back/BlockSkip.vhd
+l0
+L9
+VE]dXEn@`:k9PBBNUVFQOA1
+!s100 CAb2=h4AnE5LkE3;[YkQm0
+R8
+32
+Z32 !s110 1581803026
+!i10b 1
+Z33 !s108 1581803026.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sirpr/OneDrive/Desktop/LW02-back/BlockSkip.vhd|
+Z35 !s107 C:/Users/sirpr/OneDrive/Desktop/LW02-back/BlockSkip.vhd|
+!i113 1
+R13
+R14
+Aimp
+Z36 DEx4 work 5 cprop 0 22 lR7^48=Zd15]G3;]8Wm3D2
+R28
+R1
+R2
+R3
+R4
+Z37 DEx4 work 9 blockskip 0 22 E]dXEn@`:k9PBBNUVFQOA1
+l21
+L18
+VZ6dJ_4^Fi]F^fN3h]_BU03
+!s100 8Bak8dAYo8>3K3g3A2k3E1
+R8
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R13
+R14
+Ecbookskip
+Z38 w1581716137
+R1
+R2
+R3
+R4
+Z39 dC:/Users/skd24/Desktop/LWS02_FRIDAY
+Z40 8C:/Users/skd24/Desktop/LWS02_FRIDAY/BlockSkip.vhd
+Z41 FC:/Users/skd24/Desktop/LWS02_FRIDAY/BlockSkip.vhd
+l0
+L44
+VF]mnO5H^zcEU7KmngcmjY3
+!s100 e3c]OFDd8S78>K8cBc]<D3
+R8
+32
+Z42 !s110 1581716198
+!i10b 1
+Z43 !s108 1581716198.000000
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/skd24/Desktop/LWS02_FRIDAY/BlockSkip.vhd|
+Z45 !s107 C:/Users/skd24/Desktop/LWS02_FRIDAY/BlockSkip.vhd|
+!i113 1
+R13
+R14
+Abloock
+R27
+R36
+R1
+R2
+R3
+R4
+DEx4 work 9 cbookskip 0 22 F]mnO5H^zcEU7KmngcmjY3
+l57
+L54
+VjAJWWT3]2^EmAYbncT_TT1
+!s100 []k7Nha39NN9N5[6]?@=V2
+R8
+32
+R42
+!i10b 1
+R43
+R44
+R45
+!i113 1
+R13
+R14
+Ecnet
+Z46 w1581754100
+R16
+R3
+R4
+R5
+Z47 8C:/Users/sirpr/OneDrive/Desktop/LW02-back/Cnet.vhd
+Z48 FC:/Users/sirpr/OneDrive/Desktop/LW02-back/Cnet.vhd
+l0
+L8
+VoEB05ioT3:@7naGBa<KJO0
+!s100 GiEhMbNcLW3RT[RZD2<iH3
+R8
+32
+R23
+!i10b 1
+R24
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sirpr/OneDrive/Desktop/LW02-back/Cnet.vhd|
+Z50 !s107 C:/Users/sirpr/OneDrive/Desktop/LW02-back/Cnet.vhd|
+!i113 1
+R13
+R14
+Abrentkung
+R16
+R3
+R4
+R17
+l64
+L62
+VD8>;Y1FUQQa2`=2E^RkP13
+!s100 meB1]`cEUc2HISO5EL0;=0
+R8
+32
+R23
+!i10b 1
+R24
+R49
+R50
+!i113 1
+R13
+R14
+Agoodskip
+R1
+R2
+Z51 DEx4 work 9 goodskipb 0 22 39miOXc8B^PmOzSYBIoWS1
+R16
+R3
+R4
+R17
+l49
+L46
+V2oZi5gnSCn4BGbG?UH5If1
+!s100 2T?EAfZgK;4IV;kj;jc?Y2
+R8
+32
+R23
+!i10b 1
+R24
+R49
+R50
+!i113 1
+R13
+R14
+Abookskip
+R1
+R2
+R37
+R16
+R3
+R4
+R17
+l36
+L34
+V8iPK2dh0T^F[`J>[TINz]0
+!s100 9kgGIF>@CT[4`BOlm^ofM0
+R8
+32
+R23
+!i10b 1
+R24
+R49
+R50
+!i113 1
+R13
+R14
+Aripple
+R1
+R2
+R36
+R16
+R3
+R4
+R17
+l22
+L20
+VmU8;@09_dM]8ihX]][=LF0
+!s100 KU]XeG=;dP4Rf:_7;4R5h2
+R8
+32
+R23
+!i10b 1
+R24
+R49
+R50
+!i113 1
+R13
+R14
+Ecprop
+Z52 w1581714120
+R1
+R2
+R3
+R4
+R5
+Z53 8C:/Users/sirpr/OneDrive/Desktop/LW02-back/cprop.vhd
+Z54 FC:/Users/sirpr/OneDrive/Desktop/LW02-back/cprop.vhd
+l0
+L9
+VlR7^48=Zd15]G3;]8Wm3D2
+!s100 LfAgdL1RnYgHB34TX3>_N0
+R8
+32
+Z55 !s110 1581803038
+!i10b 1
+Z56 !s108 1581803038.000000
+Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sirpr/OneDrive/Desktop/LW02-back/cprop.vhd|
+Z58 !s107 C:/Users/sirpr/OneDrive/Desktop/LW02-back/cprop.vhd|
+!i113 1
+R13
+R14
+Aelement
+Z59 DEx4 work 3 or2 0 22 Fl0^Gc246X7RNnieRfCFh0
+R27
+R1
+R2
+R3
+R4
+R36
+l19
+L17
+Z60 V645DaoZXR>gS4>ill8jgT0
+Z61 !s100 iQLT1S_DN]E[ZMAe>0K1X0
+R8
+32
+R55
+!i10b 1
+R56
+R57
+R58
+!i113 1
+R13
+R14
+Astructural
+R59
+R27
+R1
+R2
+R3
+R4
+DEx4 work 5 cprop 0 22 [KW5Z=X@1NOg8B=2o_=]?0
+l178
+L176
+VIP<N2]_gM@Xig9BiWFl2A0
+!s100 X9>l71Ckd_H4QmK^79j7O1
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+R22
+R20
+R21
+Abookskip
+R1
+R2
+R3
+R4
+DEx4 work 5 cprop 0 22 d80a1NC8;GGK<XWm3?ODb1
+l51
+L48
+V^NdN5SdX[jJm5]ZZ3bVh63
+!s100 nAEaRzcP8mO8Q9ZRf=nk[0
+OV;C;10.6d;65
+32
+!s110 1580768149
+!i10b 1
+!s108 1580768149.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/LWS02/Cnet.vhd|
+!s107 U:/LWS02/Cnet.vhd|
+!i113 1
+R13
+R14
+dU:/LWS02
+FU:/LWS02/Cnet.vhd
+w1580768122
+8U:/LWS02/Cnet.vhd
+Egoodskipb
+Z62 w1581754419
+R1
+R2
+R3
+R4
+R5
+Z63 8C:/Users/sirpr/OneDrive/Desktop/LW02-back/goodSkipb.vhd
+Z64 FC:/Users/sirpr/OneDrive/Desktop/LW02-back/goodSkipb.vhd
+l0
+L9
+V39miOXc8B^PmOzSYBIoWS1
+!s100 a5>VHS@ZZO;F<zEPo16Ld0
+R8
+32
+R23
+!i10b 1
+R24
+Z65 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sirpr/OneDrive/Desktop/LW02-back/goodSkipb.vhd|
+Z66 !s107 C:/Users/sirpr/OneDrive/Desktop/LW02-back/goodSkipb.vhd|
+!i113 1
+R13
+R14
+Aimp
+R36
+R28
+R1
+R2
+R3
+R4
+R51
+l22
+L18
+Vad`;5?1?D99@c5_>YdMWQ3
+!s100 g44<0IZXRYb;?UU@FVmF@0
+R8
+32
+R23
+!i10b 1
+R24
+R65
+R66
+!i113 1
+R13
+R14
+Egpnet
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+l0
+L9
+VI7a@M?AXkMJC4e0RES<TU1
+!s100 8S>HUCm17?_jYgS=8Hj4d2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Astructural
+Z67 DEx4 work 4 xor2 0 22 [>E6iCI4F;AAa4ME6<X^c2
+R27
+R1
+R2
+R3
+R4
+R18
+l19
+L18
+V?[k4Yi3ANSmT7<Y9aZTQA0
+!s100 T?Vj[8RRjI[^^J2JR7U2?3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Einverter
+R20
+R1
+R2
+R3
+R4
+R5
+R21
+R22
+l0
+L151
+VJ_;hg67e5ZCK_QRSgI^R;3
+!s100 CHWMd8>^oOIlNj_M;]j7Y3
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Aprimitive
+R1
+R2
+R3
+R4
+DEx4 work 8 inverter 0 22 J_;hg67e5ZCK_QRSgI^R;3
+l157
+L156
+V8o`b4eHd;cMShNgKaFHiX2
+!s100 5?c0_CZd[ENT<f]290Xej2
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Eor2
+R20
+R1
+R2
+R3
+R4
+R5
+R21
+R22
+l0
+L70
+VFl0^Gc246X7RNnieRfCFh0
+!s100 F`0F4GP?VHfSi11[9eP4l3
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Aprimitive
+R1
+R2
+R3
+R4
+R59
+l77
+L76
+VbomieQP9BDP_>UPc=G6N>2
+!s100 oWG0idM_5[bOIgG3h6fea2
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Eor3
+R20
+R1
+R2
+R3
+R4
+R5
+R21
+R22
+l0
+L86
+V65^DSEZDi_6ODB3e85:i_0
+!s100 :j:OW=HB]XzT;B4z2BPj12
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Aprimitive
+R1
+R2
+R3
+R4
+DEx4 work 3 or3 0 22 65^DSEZDi_6ODB3e85:i_0
+l93
+L92
+V`25=`RLP>UIC]FY^8dIVU0
+!s100 Ch6die;z@`MiYh1EYBa`Z3
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Eor4
+R20
+R1
+R2
+R3
+R4
+R5
+R21
+R22
+l0
+L108
+VcbQg7mnTOLWJmCRL9zn8K3
+!s100 4Ti@boSGXGDG^MkaaGX181
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Aprimitive
+R1
+R2
+R3
+R4
+DEx4 work 3 or4 0 22 cbQg7mnTOLWJmCRL9zn8K3
+l116
+L115
+VW;?DJzBPhj2=nIB0Yz>dD3
+!s100 m]?9BkMjTlahLT:]zaDhk2
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Eparitycheck
+Z68 w1581128164
+R16
+R3
+R4
+R5
+Z69 8C:/Users/sirpr/OneDrive/Desktop/LW02-back/part1.vhd
+Z70 FC:/Users/sirpr/OneDrive/Desktop/LW02-back/part1.vhd
+l0
+L13
+V7?NV2ZC2iaS2iKb7]mZ4`1
+!s100 a0oHfSB>BBYhDkGKOOGGQ0
+R8
+32
+R23
+!i10b 1
+R24
+Z71 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sirpr/OneDrive/Desktop/LW02-back/part1.vhd|
+Z72 !s107 C:/Users/sirpr/OneDrive/Desktop/LW02-back/part1.vhd|
+!i113 1
+R13
+R14
+Atree2
+R1
+R2
+R67
+R16
+R3
+R4
+Z73 DEx4 work 11 paritycheck 0 22 7?NV2ZC2iaS2iKb7]mZ4`1
+l83
+L80
+VgLHPQ;lKgkhU9UD:NGP`H0
+!s100 mDjIA0dVbdSLzZhoY_[l92
+R8
+32
+R9
+!i10b 1
+R24
+R71
+R72
+!i113 1
+R13
+R14
+Achain2
+R1
+R2
+R67
+R16
+R3
+R4
+R73
+l60
+L58
+V69[<TNLe<ze9mB:i`;Gj21
+!s100 a[bBjBEjai85;XnKN@^=D0
+R8
+32
+R9
+!i10b 1
+R24
+R71
+R72
+!i113 1
+R13
+R14
+Achain1
+R1
+R2
+R67
+R16
+R3
+R4
+R73
+l42
+L40
+Vo85B:@?lF;eULA_`:>jWC3
+!s100 JOSOgR@Yg]j_3[hS68TBj1
+R8
+32
+R9
+!i10b 1
+R24
+R71
+R72
+!i113 1
+R13
+R14
+Atree1
+R1
+R2
+R67
+R16
+R3
+R4
+R73
+l24
+L22
+Vk2kTBB0i8PT0Z8RNOK=JH0
+!s100 LW6]G?0^B^[eT@gh=e7B[1
+R8
+32
+R23
+!i10b 1
+R24
+R71
+R72
+!i113 1
+R13
+R14
+Esnet
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+l0
+L40
+V@bebNligX3=fOCAVSdj0B0
+!s100 6^8Md7H9Gka@cG^Z^I4YQ1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Astructural
+R67
+R1
+R2
+R3
+R4
+R15
+l50
+L49
+VZJz>[43oi7jo[c0An`Ei60
+!s100 [eU^LU2D80lE5JYo<EaOj2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Etestpart1
+Z74 w1581128180
+R1
+R2
+R3
+R4
+R5
+Z75 8C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart1.vhd
+Z76 FC:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart1.vhd
+l0
+L7
+V6Vj;LhTmaHSjGZSmaA8eV1
+!s100 1S]om=PH>?ET];5bdjXVZ0
+R8
+32
+R9
+!i10b 1
+R10
+Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart1.vhd|
+Z78 !s107 C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart1.vhd|
+!i113 1
+R13
+R14
+Abehavioural
+R16
+R73
+R1
+R2
+R3
+R4
+DEx4 work 9 testpart1 0 22 6Vj;LhTmaHSjGZSmaA8eV1
+l14
+L10
+Va[>KCEl;?ab128?O9`Mml2
+!s100 P]0TUUFa?MP`5mE:5gZHA0
+R8
+32
+R9
+!i10b 1
+R10
+R77
+R78
+!i113 1
+R13
+R14
+Etestpart2
+R74
+R1
+R2
+R3
+R4
+R5
+Z79 8C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart2.vhd
+Z80 FC:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart2.vhd
+l0
+L6
+V8d;?gFUc^@ZoAOWgSdgWN0
+!s100 KI_:J0jGlco0]BE:Og4jW3
+R8
+32
+Z81 !s110 1581803029
+!i10b 1
+R10
+Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart2.vhd|
+Z83 !s107 C:/Users/sirpr/OneDrive/Desktop/LW02-back/TestPart2.vhd|
+!i113 1
+R13
+R14
+Abehavioural
+R19
+R1
+R2
+R3
+R4
+DEx4 work 9 testpart2 0 22 8d;?gFUc^@ZoAOWgSdgWN0
+l13
+L9
+Vmjf:>AeSSeB[3YL[BzL?d0
+!s100 @FQ69immSIbmUKZkKaQj02
+R8
+32
+R81
+!i10b 1
+R10
+R82
+R83
+!i113 1
+R13
+R14
+Exor2
+R20
+R1
+R2
+R3
+R4
+R5
+R21
+R22
+l0
+L131
+V[>E6iCI4F;AAa4ME6<X^c2
+!s100 <<j`>lW6C1F@f:8FJ2oYa1
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
+Aprimitive
+R1
+R2
+R3
+R4
+R67
+l138
+L137
+VIU<4i8XB:CmNl<SnkiB;N3
+!s100 zb7d_P41k7VR@3TmF:WmO2
+R8
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R13
+R14
