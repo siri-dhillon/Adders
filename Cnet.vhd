@@ -58,15 +58,38 @@ end architecture GoodSkip;
 
 
 
+--G, P     :     in     std_logic_vector(width-1 downto 0);
+--          Cin      :     in     std_logic;
+--          C        :     out    std_logic_vector(width downto 0) );
+
+
+--     generic ( width : integer := 16 );
+--     port (
+--          Gleft, Pleft, Gright, Pright     :     in     std_logic;
+--          Gmerged, Pmerged      :     out     std_logic);
 
 architecture BrentKung of Cnet is
 	signal tempG : std_logic_vector( (width/2)-1 downto 0 );
 	signal tempP : std_logic_vector( (width/2)-1 downto 0 );
 	signal initG : std_logic_vector( width-1 downto 0);
 	signal initP : std_logic_vector( width-1 downto 0);
-	signal leftt : integer :=1; 
-	signal rightt: integer :=0; 
+	signal leftCounter : integer :=0; 
+	signal rightCounter: integer :=0; 
 begin
+
+	Recur: if (N>1) generate
+		top: entity work.Cnet(BrentKung) generic map(N/2) 
+			port map (G(N/2 downto 0),P(N/2 downto 0),); -- create each block eg. 16,8,4,2,1
+
+			columns: for j in 0 to N/2 generate --create what's inside of each block eg. [7,7] [6,6]
+				cpropmap: entity work.GPCircle(imp) port map (Gleft(outputOfRec), Pleft(), Gright(), Pright(), );
+			end generate columns;
+
+	End Generate Recur;
+
+	StopRecur: if N =1 generate
+
+	End Generate StopRecur;
 
 	--initG <= G;
 	--initP <= P;
