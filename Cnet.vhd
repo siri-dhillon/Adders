@@ -60,6 +60,27 @@ end architecture GoodSkip;
 
 
 architecture BrentKung of Cnet is
+	signal tempG : std_logic_vector( (width/2)-1 downto 0 );
+	signal tempP : std_logic_vector( (width/2)-1 downto 0 );
+	signal initG : std_logic_vector( width-1 downto 0);
+	signal initP : std_logic_vector( width-1 downto 0);
+	signal leftt : initeger :=1; 
+	signal rightt: initeger :=0; 
+begin
+
+	initG <= G;
+	initP <= P;
+	resur: if width > 1 generate
+	stages: for i in 0 to width-1 generate
+			leftt <= leftt + 2;
+			StageUpper: entity work.GPCirlce port map (initG())
+			-- StageLower: entity work.GPCirlce port map
+	end generate stages;
+
+	Stoprecur: if width = 1 generate
+				
+	end generate Stoprecur;
+								
 
 begin
 
