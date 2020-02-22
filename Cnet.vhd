@@ -73,18 +73,19 @@ architecture BrentKung of Cnet is
 	signal tempP : std_logic_vector( (width/2)-1 downto 0 );
 	signal initG : std_logic_vector( width-1 downto 0);
 	signal initP : std_logic_vector( width-1 downto 0);
-	signal leftCounter : integer :=0; 
-	signal rightCounter: integer :=0; 
+	signal leftIndex : integer :=1; 
+	signal rightIndex: integer :=0; 
+	signal stageCount: integer :=0;
+	signal mergeResult: std_logic_vector( 16 downto 0);
 begin
 
 	Recur: if (N>1) generate
-		top: entity work.Cnet(BrentKung) generic map(N/2) 
-			port map (G(N/2 downto 0),P(N/2 downto 0),); -- create each block eg. 16,8,4,2,1
-
-			columns: for j in 0 to N/2 generate --create what's inside of each block eg. [7,7] [6,6]
-				cpropmap: entity work.GPCircle(imp) port map (Gleft(outputOfRec), Pleft(), Gright(), Pright(), );
-			end generate columns;
-
+		top: entity work.Cnet(BrentKung) generic map(N/2) port map (G(N/2 downto 0),P(N/2 downto 0), mergeResult( )); -- create each block eg. 8,4,2,1. output should be halfed
+								     --stage 0,1,2,3,4,5,6,7
+			columns: for j in 0 to (N/2)/2 generate --create what's inside of each block eg. [7,7] [6,6]
+				cpropmap: entity work.GPCircle(imp) port map (Gleft(leftIndex + j*2), Pleft(leftIndex + j*2), Gright(rightIndex + j*2), Pright(rightIndex + j*2), mergeResult(j));
+			end generate columns
+			
 	End Generate Recur;
 
 	StopRecur: if N =1 generate
