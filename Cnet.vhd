@@ -22,7 +22,7 @@ architecture Ripple of Cnet is
 begin
 c_net(0) <= Cin; 
 C(0) <= Cin;
-columns: for i in 0 to width-1 generate
+columns: for i in  0 to width-1 generate
 	cpropmap: entity work.Cprop(Element) port map (G(i),P(i) ,c_net(i), c_net(i+1));
 	C(i+1) <= c_net(i+1);
 end generate columns;
@@ -57,55 +57,67 @@ end generate columns;
 end architecture GoodSkip;
 
 
+--BLAN
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
 
---G, P     :     in     std_logic_vector(width-1 downto 0);
---          Cin      :     in     std_logic;
---          C        :     out    std_logic_vector(width downto 0) );
+entity BLAN is
+     generic ( width : integer := 2 );
+     port (
+          G, P : in   std_logic_vector(width-1 downto 0);
+      	  Gout, Pout : out  std_logic_vector(width-1 downto 0);
+end entity BLAN;
+
+architecture structure of BLAN is
+	signal GoutputMerged: std_logic_vector((width/2)-1 downto 0);
+	signal PoutputMerged: std_logic_vector((width/2)-1 downto 0);
+	signal GreducedOutput:std_logic_vector((width/2)-1 downto 0);
+	signal PreducedOutput: std_logic_vector((width/2)-1 downto 0);
 
 
---     generic ( width : integer := 16 );
---     port (
---          Gleft, Pleft, Gright, Pright     :     in     std_logic;
---          Gmerged, Pmerged      :     out     std_logic);
-
-architecture BrentKung of Cnet is
-	signal tempG : std_logic_vector( (width/2)-1 downto 0 );
-	signal tempP : std_logic_vector( (width/2)-1 downto 0 );
-	signal initG : std_logic_vector( width-1 downto 0);
-	signal initP : std_logic_vector( width-1 downto 0);
-	signal leftIndex : integer :=1; 
-	signal rightIndex: integer :=0; 
-	signal stageCount: integer :=0;
-	signal mergeResult: std_logic_vector( 16 downto 0);
 begin
 
-	Recur: if (N>1) generate
-		top: entity work.Cnet(BrentKung) generic map(N/2) port map (G(N/2 downto 0),P(N/2 downto 0), mergeResult( )); -- create each block eg. 8,4,2,1. output should be halfed
-								     --stage 0,1,2,3,4,5,6,7
-			columns: for j in 0 to (N/2)/2 generate --create what's inside of each block eg. [7,7] [6,6]
-				cpropmap: entity work.GPCircle(imp) port map (Gleft(leftIndex + j*2), Pleft(leftIndex + j*2), Gright(rightIndex + j*2), Pright(rightIndex + j*2), mergeResult(j));
-			end generate columns
-			
-	End Generate Recur;
+	recursion: if width > 2 generate
+		--generate all the circles in each stage 
+		iterateThroughCircles: for i in (width)/ 2 -1 downto generate --1st(7,0) 2nd(3,0)
+			--merge every 2 signals 
+			topLayerSignals: entity work.GPCircle(imp) port map(
+			Gleft => G(i*2+1),Pleft=> P(i*2+1) ,
+			Gright=>  G(i*2),Pright=> P(i*2) ,
+         		 Gmerged=>GoutputMerged(i), Pmerged=> PoutputMerged(i));
+		end iterateThroughCircles;
 
-	StopRecur: if N =1 generate
+	--do the next stage with a reduced input size, and output size
+	nextStageRecursion: enetity work.BLAN
+		generic map( width => width/2)
+		port map( G =>GoutputMerged, P=>PoutputMerged, Gout=>GreducedOutput, Pout=>PreducedOutput);
+	end nextStageRecursion;
 
-	End Generate StopRecur;
 
-	--initG <= G;
-	--initP <= P;
-	--resur: if width > 1 generate
-	--stages: for i in 0 to width-1 generate
-			--leftt <= leftt + 2;
-			--StageUpper: entity work.GPCirlce port map (initG())
-			-- StageLower: entity work.GPCirlce port map
-	--end generate stages;
+	end recursion;
 
-	--Stoprecur: if width = 1 generate
-				
-	--end generate Stoprecur;
 	
 
+end architecture structure;
+
+
+
+--BRENTKUNG
+
+architecture BrentKung of Cnet is
+	signal outputG : std_logic_vector( (width)-1 downto 0 );
+	signal outputP : std_logic_vector( (width)-1 downto 0 );
+
+begin
+	blan:entity work.BLAN
+		generic map(width) --16
+		port map(
+		G=>G,
+		P=>P,
+		Gout=>outputG,
+		Pout=>outputP,
+		);		
 end architecture BrentKung;
 
 
