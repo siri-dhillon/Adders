@@ -105,7 +105,7 @@ begin
 				Gright=>  G(i*2),Pright=> P(i*2) ,
          		 	Gmerged=>GoutputMerged(i), Pmerged=> PoutputMerged(i)
 			);
-		end iterateThroughCircles;
+		end generate iterateThroughCircles;
 
 		--do the next stage with a reduced input size, and output size
 		nextStageRecursion: entity work.BLAN
@@ -114,30 +114,10 @@ begin
 			 	G =>GoutputMerged, P=>PoutputMerged, 
 			 	Gout=>GreducedOutput, Pout=>PreducedOutput
 			);
-		end nextStageRecursion;
+	
+	
 
-		lowerTree: for i in width / 2 - 1 downto 1 generate  --16: 7 down to 1 --8: 3 down to 1 --4:1 down to 1
-			lastOInputsG(i*2-1 downto i*2-2) <= GreducedOutput(i-1) & G(2*i); --5 downto 4 3downto 2 1 downto 0  2,1,0 ,g6 g4 g2 ///--1 downto 0, 0 g(2)
-			lastOInputsP(i*2-1 downto i*2-2) <= PreducedOutput(i-1) & P(2*i); --5 downto 4 --1 downto 0 0 g(2)
-          	  pairEnd1: entity.GPCircle(imp) port map(
-                 	   G => lastOInputsG(i*2-1 downto i*2-2),
-			   P => lastOInputsP(i*2-1 downto i*2-2), --1 down to 0, 1 down to 0
-                 	   Gout => Gout(2*i), 
-			   Pout => Pout(2*i) --2,2
-                	);
-       		 end generate pairEnd;
-
-		 -- assign output signals
-       		Gout(0) <= G(0); 
-      		Pout(0) <= P(0); 
-       		 finalAssignment: for i in width / 2 - 1 downto 0 generate
-       		     Gout(2*i+1) <= GreducedOutput(i);
-       		     Pout(2*i+1) <= PreducedOutput(i);
-       		 end generate finalAssignment;
-
-
-
-	end recursion;
+	end generate recursion;
 end architecture structure;
 
 
@@ -156,13 +136,14 @@ begin
 		G=>G,
 		P=>P,
 		Gout=>outputG,
-		Pout=>outputP,
+		Pout=>outputP
 		);		
 
 	C(0) <= Cin;
     carries: for i in width-1 downto 0 generate
         pcin: entity work.and2 port map(Cin, outputP(i), PandCin(i));
 	output: entity work.or2 port map(PandCin(i), outputG(i), out1 => C(i+1));
+	end generate carries;
 end architecture BrentKung;
 
 
