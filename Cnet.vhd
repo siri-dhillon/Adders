@@ -66,7 +66,8 @@ entity BLAN is
      generic ( width : integer := 2 );
      port (
           G, P : in   std_logic_vector(width-1 downto 0);
-      	  Gout, Pout : out  std_logic_vector(width-1 downto 0);
+      	  Gout, Pout : out  std_logic_vector(width-1 downto 0)
+	);
 end entity BLAN;
 
 architecture structure of BLAN is
@@ -91,7 +92,7 @@ begin
          		 	Gmerged=>Gout(1), Pmerged=>Pout(1) --save 15,0 ??? draw out tree
 		);
 		
-	end baseCase
+	end generate baseCase;
 
 
 
@@ -107,7 +108,7 @@ begin
 		end iterateThroughCircles;
 
 		--do the next stage with a reduced input size, and output size
-		nextStageRecursion: enetity work.BLAN
+		nextStageRecursion: entity work.BLAN
 			generic map( width => width/2)
 			port map(
 			 	G =>GoutputMerged, P=>PoutputMerged, 
