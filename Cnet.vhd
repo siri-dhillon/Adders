@@ -57,96 +57,112 @@ end generate columns;
 end architecture GoodSkip;
 
 
---BLAN
+
+-- Brent-Kung style BLAN
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.numeric_std.ALL;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
 
-entity BLAN is
-     generic ( width : integer := 2 );
-     port (
-          G, P : in   std_logic_vector(width-1 downto 0);
-      	  Gout, Pout : out  std_logic_vector(width-1 downto 0)
-	);
-end entity BLAN;
+entity BKBlan is
+    generic (
+        width : integer := 2
+    );
+    port (
+        G, P : in std_logic_vector(width-1 downto 0);
+        GxToBase, PxToBase : out std_logic_vector(width-1 downto 0)
+    );
+end entity BKBlan;
 
-architecture structure of BLAN is
-	signal GoutputMerged: std_logic_vector((width/2)-1 downto 0);
-	signal PoutputMerged: std_logic_vector((width/2)-1 downto 0);
-	signal GreducedOutput:std_logic_vector((width/2)-1 downto 0);
-	signal PreducedOutput: std_logic_vector((width/2)-1 downto 0);
-
-	--saving 
+architecture Structural of BKBlan is
+    signal pairedG : std_logic_vector((width) / 2 - 1 downto 0);
+    signal pairedP : std_logic_vector((width) / 2 - 1 downto 0);
+    signal G2xToBase : std_logic_vector((width) / 2 - 1 downto 0);
+    signal P2xToBase : std_logic_vector((width) / 2 - 1 downto 0);
 	signal lastOInputsG : std_logic_vector(width-2 downto 0);
 	signal lastOInputsP : std_logic_vector(width-2 downto 0);
-	
 begin
-	--we need to get output for 16bit
-	--this is like the nextStageRecursion
-	baseCase: if width =2 generate
-		Gout(0) <= G(0); --save 7,0 ?? draw out tree
-      		Pout(0) <= P(0); 
-		outputs: entity work.GPCircle(imp) port map(
-				Gleft => G(1),Pleft=>(G(1) ),
-				Gright=> G(0),Pright=>P(0) ,
-         		 	Gmerged=>Gout(1), Pmerged=>Pout(1) --save 15,0 ??? draw out tree
-		);
-		
-	end generate baseCase;
+    baseCase: if width = 2 generate
+        GxToBase(0) <= G(0);
+        PxToBase(0) <= P(0);
+        aggregate: entity work.GPCircle(imp) port map(
+                Gleft => G(1),Pleft => P(1),
+		Gright => G(0),Pright => P(0),
+                Gmerged => GxToBase(1), Pmerged => PxToBase(1)
+            );
+    end generate baseCase;
+    recursion: if width > 2 generate
+        -- get paired up signals
+        pairGPSignals: for i in (width) / 2 - 1 downto 0 generate
+            pairGP1: entity work.GPCircle(imp) port map(
+                    Gleft => G(i*2+1),Pleft=> P(i*2+1),
+		    Gright=>  G(i*2),Pright=> P(i*2) ,
+                    Gmerged => pairedG(i), Pmerged => pairedP(i)
+                );
+        end generate pairGPSignals;
+        -- recur
+        recur: entity work.BKBlan 
+            generic map(
+                width => width / 2
+            )
+            port map(
+                G => pairedG, P => pairedP,
+                GxToBase => G2xToBase, PxToBase => P2xToBase
+            );
+        -- pair end
+        pairEnd: for i in width / 2 - 1 downto 1 generate  --16: 7 down to 1 --8: 3 down to 1 --4:1 down to 1
+			lastOInputsG(i*2-1 downto i*2-2) <= G2xToBase(i-1) & G(2*i); --5 downto 4 3downto 2 1 downto 0  2,1,0 ,g6 g4 g2 ///--1 downto 0, 0 g(2)
+			lastOInputsP(i*2-1 downto i*2-2) <= P2xToBase(i-1) & P(2*i); --5 downto 4 --1 downto 0 0 g(2)
+            pairEnd1: entity work.GPCircle(imp) port map(
+                    Gleft => lastOInputsG(i*2-1),
+		    Pleft => lastOInputsP(i*2-1 ),
+		    Gright => lastOInputsG( i*2-2),
+		    Pright => lastOInputsP(i*2-2),
+ --1 down to 0, 1 down to 0
+                    Gmerged => GxToBase(2*i), Pmerged => PxToBase(2*i) --2,2
+                );
+        end generate pairEnd;
 
+        -- assign output signals
+        GxToBase(0) <= G(0);
+        PxToBase(0) <= P(0);
+        finalAssignment: for i in width / 2 - 1 downto 0 generate
+            GxToBase(2*i+1) <= G2xToBase(i);
+            PxToBase(2*i+1) <= P2xToBase(i);
+        end generate finalAssignment;
 
+    end generate recursion;
+end architecture Structural;
 
-	recursion: if width > 2 generate
-		--generate all the circles in each stage 
-		iterateThroughCircles: for i in (width)/ 2 -1 downto 0 generate --1st(7,0) 2nd(3,0) 3rd (1,0) 4th(base case)
-			--merge every 2 signals 
-			topLayerSignals: entity work.GPCircle(imp) port map(
-				Gleft => G(i*2+1),Pleft=> P(i*2+1),
-				Gright=>  G(i*2),Pright=> P(i*2) ,
-         		 	Gmerged=>GoutputMerged(i), Pmerged=> PoutputMerged(i)
-			);
-		end generate iterateThroughCircles;
-
-		--do the next stage with a reduced input size, and output size
-		nextStageRecursion: entity work.BLAN
-			generic map( width => width/2)
-			port map(
-			 	G =>GoutputMerged, P=>PoutputMerged, 
-			 	Gout=>GreducedOutput, Pout=>PreducedOutput
-			);
-	
-	
-
-	end generate recursion;
-end architecture structure;
-
-
-
---BRENTKUNG
 
 architecture BrentKung of Cnet is
-	signal outputG : std_logic_vector( (width)-1 downto 0 );
-	signal outputP : std_logic_vector( (width)-1 downto 0 );
-	signal PandCin: std_logic_vector(width-1 downto 0);
-
+    -- G   : width-1 downto 0
+    -- P   : width-1 downto 0
+    -- C   : std_logic
+    -- Cin : width downto 0
+    signal aggregateG: std_logic_vector(width-1 downto 0);
+    signal aggregateP: std_logic_vector(width-1 downto 0);
+    signal PandCin: std_logic_vector(width-1 downto 0);
 begin
-	blan:entity work.BLAN
-		generic map(width) --16
-		port map(
-		G=>G,
-		P=>P,
-		Gout=>outputG,
-		Pout=>outputP
-		);		
-
+    bkblan: entity work.BKBlan 
+        generic map(width => width)
+        port map(
+            G => G, P => P,
+            GxToBase => aggregateG,
+            PxToBase => aggregateP
+        );
+	-- get carries
 	C(0) <= Cin;
     carries: for i in width-1 downto 0 generate
-        pcin: entity work.and2 port map(Cin, outputP(i), PandCin(i));
-	output: entity work.or2 port map(PandCin(i), outputG(i), out1 => C(i+1));
-	end generate carries;
+
+	cpropmap: entity work.Cprop(Element) port map (
+	G => aggregateG(i),
+	P =>	aggregateP(i),
+	Cin=>	Cin,
+	Cout=>	C(i+1)
+	);
+
+    end generate carries;
 end architecture BrentKung;
-
-
 
 
 
