@@ -74,25 +74,41 @@ architecture structure of BLAN is
 	signal PoutputMerged: std_logic_vector((width/2)-1 downto 0);
 	signal GreducedOutput:std_logic_vector((width/2)-1 downto 0);
 	signal PreducedOutput: std_logic_vector((width/2)-1 downto 0);
-
-
 begin
+	--we need to get output for 16bit
+	--this is like the nextStageRecursion
+	baseCase: if width =2 generate
+		Gout(0) <= G(0); --save 7,0 ?? draw out tree
+      		Pout(0) <= P(0); 
+		outputs: entity work.GPCircle(imp) port map(
+				Gleft => G(1),Pleft=>(G(1) ),
+				Gright=> G(0),Pright=>P(0) ,
+         		 	Gmerged=>Gout(1), Pmerged=>Pout(1) --save 15,0 ??? draw out tree
+		);
+		
+	end baseCase
+
+
 
 	recursion: if width > 2 generate
 		--generate all the circles in each stage 
-		iterateThroughCircles: for i in (width)/ 2 -1 downto generate --1st(7,0) 2nd(3,0)
+		iterateThroughCircles: for i in (width)/ 2 -1 downto 0 generate --1st(7,0) 2nd(3,0) 3rd (1,0) 4th(base case)
 			--merge every 2 signals 
 			topLayerSignals: entity work.GPCircle(imp) port map(
-			Gleft => G(i*2+1),Pleft=> P(i*2+1) ,
-			Gright=>  G(i*2),Pright=> P(i*2) ,
-         		 Gmerged=>GoutputMerged(i), Pmerged=> PoutputMerged(i));
+				Gleft => G(i*2+1),Pleft=> P(i*2+1),
+				Gright=>  G(i*2),Pright=> P(i*2) ,
+         		 	Gmerged=>GoutputMerged(i), Pmerged=> PoutputMerged(i)
+			);
 		end iterateThroughCircles;
 
-	--do the next stage with a reduced input size, and output size
-	nextStageRecursion: enetity work.BLAN
-		generic map( width => width/2)
-		port map( G =>GoutputMerged, P=>PoutputMerged, Gout=>GreducedOutput, Pout=>PreducedOutput);
-	end nextStageRecursion;
+		--do the next stage with a reduced input size, and output size
+		nextStageRecursion: enetity work.BLAN
+			generic map( width => width/2)
+			port map(
+			 	G =>GoutputMerged, P=>PoutputMerged, 
+			 	Gout=>GreducedOutput, Pout=>PreducedOutput
+			);
+		end nextStageRecursion;
 
 
 	end recursion;
